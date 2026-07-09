@@ -44,10 +44,8 @@ export const base44 = {
   auth: {
     loginViaEmailPassword: async (email, password) => {
       await delay(500);
-      if (email === "test@test.com" && password === "password") {
-        return true;
-      }
-      return true; // Accept any credentials for now in offline mode
+      localStorage.setItem("mock_auth_token", "mock-token");
+      return true;
     },
     register: async (data) => {
       await delay(500);
